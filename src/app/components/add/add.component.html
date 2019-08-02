@@ -1,0 +1,11 @@
+<div class="box">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Post Title</label>
+    <input type="text" class="form-control" [(ngModel)]="post.title" id="exampleFormControlInput1" placeholder="post title">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Post content textarea</label>
+    <textarea class="form-control" [(ngModel)]="post.body" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="adiconar()">Adicionar Post</button>
+</div>

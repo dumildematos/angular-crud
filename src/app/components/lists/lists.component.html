@@ -1,0 +1,24 @@
+<div class="box">
+
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" (click)="getByLimit(3)">Padrão</a></li>
+        <li class="page-item"><a class="page-link" (click)="getByLimit(10)">10</a></li>
+        <li class="page-item"><a class="page-link" (click)="getByLimit(30)">30</a></li>
+        <li class="page-item"><a class="page-link" (click)="getByLimit(60)">60</a></li>
+        <li class="page-item"><a class="page-link" (click)="getByLimit(100)">100</a></li>
+      </ul>
+    </nav>
+
+  <div class="card" style="width: 18rem;" *ngFor="let item of lista">
+    <div class="card-body">
+      <h5 class="card-title">{{ item.title }}</h5>
+      <p class="card-text">{{ item.body }}</p>
+      <a  class="btn btn-primary" (click)="deletePost(item.id)">Delete</a>
+      <a  class="btn btn-primary" (click)="goToEdit(item.id)">Edit</a>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  height: 100%;
+  background: linear-gradient(180deg, #BD3BB0, #5B29B9);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  .box{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  .card{
+    margin: 5px;
+  }
+}
+
+}
