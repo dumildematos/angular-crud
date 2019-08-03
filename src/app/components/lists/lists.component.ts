@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class ListsComponent implements OnInit {
 
-  lista : Post;
+  lista : Post[];
 
   constructor(private servico: PostsService,  private route: Router) { }
 
@@ -21,7 +21,7 @@ export class ListsComponent implements OnInit {
   }
 
   getPosts() {
-    this.servico.getPosts().subscribe(post => this.lista = post);
+    this.servico.getPosts().subscribe(post => this.lista = post.reverse());
   }
 
   deletePost(id){

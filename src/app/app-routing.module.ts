@@ -1,3 +1,4 @@
+import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddComponent } from './components/add/add.component';
@@ -7,6 +8,7 @@ import { EditComponent } from './components/edit/edit.component';
 
 
 const routes: Routes = [
+  { path: '' , redirectTo : 'lista', pathMatch: 'full' },
   { path: 'add', component: AddComponent },
   { path: 'lista', component: ListsComponent },
   { path: 'editar/:id', component: EditComponent }

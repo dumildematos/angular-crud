@@ -18,14 +18,14 @@ export class PostsService {
   constructor(private http: HttpClient) { }
 
   // Getting all Posts
-  getPosts(): Observable<Post> {
+  getPosts(): Observable<Post[]> {
     const crrUrl = `${this.url}/?_limit=${this.limit}`;
-    return this.http.get<Post>(crrUrl);
+    return this.http.get<Post[]>(crrUrl);
   }
-  getPostsbyLimit(n): Observable<Post> {
+  getPostsbyLimit(n): Observable<Post[]> {
     this.limit = n;
     const crrUrl = `${this.url}/?_limit=${this.limit}`;
-    return this.http.get<Post>(crrUrl);
+    return this.http.get<Post[]>(crrUrl);
   }
   // Getting a single Post
   getPost(id): Observable<Post> {

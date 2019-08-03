@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CreatePost } from '../../models/post';
 import { PostsService } from '../../services/posts.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -15,22 +16,33 @@ export class AddComponent implements OnInit {
     title: '',
     body: ''
   }
-  constructor(private servico:PostsService) { }
+  constructor(private servico:PostsService, private router: Router) { }
 
   ngOnInit() {
   }
 
   adiconar() {
-    this.servico.createPost(this.post).subscribe(res =>        
+    if(this.post.title == '' && this.post.body =='' ) {
       Swal.fire({
-        position: 'top-end',
-        type: 'success',
-        title: 'Your work has been saved',
-        showConfirmButton: false,
-        timer: 1500
+        type: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href>Why do I have this issue?</a>'
       })
-    )
-    console.log(this.post)
+    } else {
+
+      this.servico.createPost(this.post).subscribe(res =>
+        Swal.fire({
+          position: 'top-end',
+          type: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      )
+      this.router.navigate(['lista']);
+    }
+
   }
 
 }
