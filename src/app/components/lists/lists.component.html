@@ -1,7 +1,6 @@
+
 <div class="box">
-
-
-    <nav aria-label="Page navigation example">
+ <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item"><a class="page-link" (click)="getByLimit(3)">Padrão</a></li>
         <li class="page-item"><a class="page-link" (click)="getByLimit(10)">10</a></li>
@@ -15,8 +14,8 @@
     <div class="card-body">
       <h5 class="card-title">{{ item.title }}</h5>
       <p class="card-text">{{ item.body }}</p>
-      <a  class="btn btn-primary" (click)="deletePost(item.id)">Delete</a>
-      <a  class="btn btn-primary" (click)="goToEdit(item.id)">Edit</a>
+      <a  class="btn btn-primary red" (click)="deletePost(item.id)">Delete</a>
+      <a  class="btn btn-primary green" (click)="goToEdit(item.id)">Edit</a>
 
     </div>
   </div>
